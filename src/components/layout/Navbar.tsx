@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { CloseIcon, MenuIcon } from "@/components/ui/Icons";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Navbar() {
   const { nav, name } = siteConfig;
@@ -53,6 +54,8 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
         scrolled && !menuOpen ? "border-b border-line bg-ink/75 backdrop-blur-xl" : "border-b border-transparent",
+        // Over the (always dark) hero video the bar uses dark tokens so it stays legible in light mode.
+        !scrolled && !menuOpen && "theme-dark",
       )}
     >
       <nav aria-label="Primary" className="container-x flex h-16 items-center justify-between sm:h-[4.5rem]">
@@ -85,6 +88,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <a
             href="#contact"
             className="hidden rounded-full bg-bone px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-ember sm:inline-flex"

@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { instagramHref, whatsappHref } from "@/lib/utils";
+import { instagramHref, telHref, whatsappHref } from "@/lib/utils";
 import { ArrowUpIcon } from "@/components/ui/Icons";
 
 export function Footer() {
@@ -37,10 +37,17 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href={instagramHref(contact.instagram)} target="_blank" rel="noopener noreferrer" className="text-mute transition hover:text-bone">
-                Instagram
+              <a href={telHref(contact.phone)} className="text-mute transition hover:text-bone">
+                {contact.phone}
               </a>
             </li>
+            {contact.instagram && (
+              <li>
+                <a href={instagramHref(contact.instagram)} target="_blank" rel="noopener noreferrer" className="text-mute transition hover:text-bone">
+                  Instagram
+                </a>
+              </li>
+            )}
             <li>
               <a
                 href={whatsappHref(contact.whatsapp, contact.whatsappMessage)}

@@ -138,3 +138,22 @@ const skillPaths: Record<SkillIcon, ReactNode> = {
 };
 
 export const SkillGlyph = ({ name, ...p }: IconProps & { name: SkillIcon }) => <Base {...p}>{skillPaths[name]}</Base>;
+
+export const SunIcon = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />
+  </Base>
+);
+
+export const MoonIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" />
+  </Base>
+);
+
+export const PhoneIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M5 4h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4Z" />
+  </Base>
+);

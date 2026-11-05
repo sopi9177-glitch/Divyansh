@@ -19,3 +19,7 @@ export function timecode(seconds: number, fps = 24) {
   const s = Math.floor(total / fps);
   return `${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}:${pad(frames)}`;
 }
+
+export function telHref(phone: string) {
+  return `tel:+${phone.replace(/\D/g, "")}`;
+}

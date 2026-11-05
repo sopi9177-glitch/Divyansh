@@ -103,7 +103,7 @@ function VideoModal({
       role="dialog"
       aria-modal="true"
       aria-label={`${project.title} — ${project.client}`}
-      className="fixed inset-0 z-[100] flex flex-col bg-black/95 backdrop-blur-sm animate-fade-up [animation-duration:0.35s]"
+      className="theme-dark fixed inset-0 z-[100] flex flex-col bg-black/95 backdrop-blur-sm animate-fade-up [animation-duration:0.35s]"
     >
       <div className="container-x flex items-center justify-between gap-4 py-4">
         <div className="min-w-0">

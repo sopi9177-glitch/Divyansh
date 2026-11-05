@@ -244,7 +244,7 @@ export const siteConfig = {
     { name: "Premiere Pro", short: "Pr", use: "Editing", color: "#9a8cff" },
     { name: "After Effects", short: "Ae", use: "Motion & VFX", color: "#b58cff" },
     { name: "DaVinci Resolve", short: "Dr", use: "Colour & finishing", color: "#e3a857" },
-    { name: "CapCut", short: "Cc", use: "Short-form", color: "#f2f2f2" },
+    { name: "CapCut", short: "Cc", use: "Short-form", color: "#38bdf8" },
     { name: "Final Cut Pro", short: "Fc", use: "Editing", color: "#ff7a6b" },
     { name: "Audition", short: "Au", use: "Audio repair & mix", color: "#5fd6b4" },
     { name: "Photoshop", short: "Ps", use: "Thumbnails & stills", color: "#5fb3ff" },
@@ -312,14 +312,12 @@ export const siteConfig = {
   ],
 
   contact: {
-    // Update these before going live.
-    email: "hello@divyansh.video",
-    instagram: "divyansh.edits",
-    whatsapp: "919876543210", // Country code + number, digits only.
+    email: "divyanshv66@gmail.com",
+    phone: "+91 78799 80642", // Shown as-is; the call link uses the digits.
+    whatsapp: "917879980642", // Country code + number, digits only.
     whatsappMessage: "Hi Divyansh, I'd like to talk about a video project.",
+    instagram: "", // Add your handle (without @) to show an Instagram link.
     availability: "Booking projects for January 2027",
-    projectTypes: ["Commercial / Brand film", "Music video", "Social content", "Documentary", "YouTube", "Other"],
-    budgets: ["Under ₹50k", "₹50k – ₹1.5L", "₹1.5L – ₹5L", "₹5L+", "Not sure yet"],
   },
 };
 

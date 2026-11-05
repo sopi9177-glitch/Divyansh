@@ -8,7 +8,7 @@ export function Hero() {
   const { hero, name, location } = siteConfig;
 
   return (
-    <section id="home" className="relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden">
+    <section id="home" className="theme-dark relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <HeroVideo />
         {/* Grade the plate so type always reads: vignette + bottom fade */}

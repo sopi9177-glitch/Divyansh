@@ -48,7 +48,7 @@ export function VideoCard({ project, onOpen, featured, priority }: VideoCardProp
       onFocus={start}
       onBlur={stop}
       aria-label={`Play ${project.title} for ${project.client}`}
-      className="group relative block size-full overflow-hidden rounded-xl bg-ink-3 text-left ring-1 ring-line transition duration-500 hover:ring-ember/50"
+      className="theme-dark group relative block size-full overflow-hidden rounded-xl bg-ink-3 text-left ring-1 ring-line transition duration-500 hover:ring-ember/50"
     >
       <div className={cn("relative aspect-video w-full", featured && "lg:aspect-auto lg:h-full")}>
         <Image

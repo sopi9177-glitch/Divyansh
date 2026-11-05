@@ -1,15 +1,20 @@
 @import "tailwindcss";
 
-@theme {
-  --color-ink: #070708;
-  --color-ink-2: #0d0d0f;
-  --color-ink-3: #151518;
-  --color-line: rgb(255 255 255 / 0.09);
-  --color-bone: #ede8e0;
-  --color-mute: #8f8b85;
-  --color-ember: #e3a857;
-  --color-ember-deep: #c9683a;
+/* Colours resolve per theme scope, so `data-theme` can flip any subtree (see .theme-dark). */
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-bone: var(--bone);
+  --color-mute: var(--mute);
+  --color-ember: var(--ember);
+  --color-ember-deep: var(--ember-deep);
+}
 
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
+@theme {
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-instrument), ui-serif, Georgia, serif;
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
@@ -35,8 +40,38 @@
 }
 
 @layer base {
-  html {
+  :root,
+  [data-theme="dark"],
+  .theme-dark {
+    --ink: #070708;
+    --ink-2: #0d0d0f;
+    --ink-3: #151518;
+    --line: rgb(255 255 255 / 0.09);
+    --bone: #ede8e0;
+    --mute: #8f8b85;
+    --ember: #e3a857;
+    --ember-deep: #c9683a;
+    --grain: 0.055;
     color-scheme: dark;
+  }
+
+  [data-theme="light"] {
+    --ink: #f5f2ed;
+    --ink-2: #ece8e1;
+    --ink-3: #e2ddd4;
+    --line: rgb(22 20 15 / 0.12);
+    --bone: #17150f;
+    --mute: #67625a;
+    --ember: #b0661c;
+    --ember-deep: #a3472a;
+    --grain: 0.035;
+    color-scheme: light;
+  }
+
+  /* Forces dark tokens on a subtree (video overlays, the player) regardless of theme. */
+  .theme-dark { color: var(--bone); }
+
+  html {
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -46,6 +81,7 @@
 
   body {
     @apply bg-ink text-bone font-sans antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
     text-rendering: optimizeLegibility;
   }
 
@@ -56,7 +92,7 @@
     inset: -50%;
     z-index: 60;
     pointer-events: none;
-    opacity: 0.055;
+    opacity: var(--grain);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 

@@ -6,7 +6,7 @@ export function Tools() {
   const { tools } = siteConfig;
 
   return (
-    <section id="tools" className="relative overflow-hidden border-t border-line py-24 sm:py-32">
+    <section id="tools" className="relative overflow-hidden border-t border-line py-20 sm:py-28">
       {/* Scrolling ticker of tool names */}
       <div aria-hidden className="mb-20 flex overflow-hidden border-y border-line py-5 select-none">
         <div className="flex shrink-0 animate-marquee items-center whitespace-nowrap">

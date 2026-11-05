@@ -4,13 +4,13 @@ import { timecode } from "@/lib/utils";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 
-const clipColors = ["#e3a857", "#c9683a", "#9a8cff", "#5fd6b4", "#ede8e0"];
+const clipColors = ["#e3a857", "#c9683a", "#9a8cff", "#5fd6b4", "#5fb3ff"];
 
 export function Process() {
   const { process } = siteConfig;
 
   return (
-    <section id="process" className="relative border-t border-line bg-ink-2 py-24 sm:py-32">
+    <section id="process" className="relative border-t border-line bg-ink-2 py-20 sm:py-28">
       <div className="container-x">
         <SectionHeading
           scene="05"

@@ -5,7 +5,7 @@ import { SkillGlyph } from "@/components/ui/Icons";
 
 export function Skills() {
   return (
-    <section id="skills" className="relative border-t border-line bg-ink-2 py-24 sm:py-32">
+    <section id="skills" className="relative border-t border-line bg-ink-2 py-20 sm:py-28">
       <div className="container-x">
         <SectionHeading
           scene="03"

@@ -25,7 +25,7 @@ Everything visible on the site lives in **`src/config/site.ts`**:
 | `projects`     | Portfolio items (see below)                                             |
 | `categories`   | Filter tabs (empty categories are hidden automatically)                 |
 | `skills`, `tools`, `process`, `testimonials` | Their respective sections                  |
-| `contact`      | Email, Instagram handle, WhatsApp number + prefilled message, availability, form options |
+| `contact`      | Email, phone, WhatsApp number + prefilled message, optional Instagram handle, availability |
 
 ### Adding a project
 
@@ -50,36 +50,25 @@ Everything visible on the site lives in **`src/config/site.ts`**:
 - **`preview`** should be a small (≈360p, a few MB) muted clip. It is only downloaded the first time someone hovers a card, so the grid stays fast.
 - The demo footage is free stock from [Pexels](https://www.pexels.com/license/); the projects, clients and testimonials are sample content. Replace all of it with your real work before launch.
 
-## Contact form
+## Contact & themes
 
-The form posts to `src/app/api/contact/route.ts`, which validates the input (sharing rules with the client in `src/lib/contact.ts`), filters bots with a honeypot field, rate-limits by IP and sends the enquiry over SMTP with Nodemailer.
+The contact section shows large tap targets for **email**, **phone (call)** and **WhatsApp**, with copy buttons for email and phone. Set `contact.instagram` in the config to add an Instagram card and footer link.
 
-Copy `.env.example` to `.env.local` and fill in your SMTP details (for Gmail, use an [app password](https://myaccount.google.com/apppasswords)):
-
-```
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_USER=you@gmail.com
-SMTP_PASS=xxxx xxxx xxxx xxxx
-CONTACT_TO=you@gmail.com
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
-```
-
-Until SMTP is configured, the form says so and offers a pre-filled "send from your email app" link, so no enquiry is lost.
+The site has **light and dark modes**. It follows the visitor's system setting by default; the sun/moon button in the header switches it and remembers the choice. Colours are CSS variables in `src/app/globals.css` (`[data-theme="light"]` / dark), and sections that sit on video (hero, project cards, player) always use the dark palette.
 
 ## Project structure
 
 ```
 src/
-  app/                 layout, page, global styles, API route, robots/sitemap, icon
+  app/                 layout (theme script), page, global styles, robots/sitemap, icon
   config/site.ts       all content
-  lib/                 helpers + shared contact validation
+  lib/                 helpers (link builders, timecode)
   components/
-    layout/            Navbar (scroll-spy, mobile menu), Footer
+    layout/            Navbar (scroll-spy, mobile menu, theme toggle), Footer
     sections/          Hero, About, Portfolio, Skills, Tools, Process, Testimonials, Contact
     portfolio/         VideoCard (hover preview), VideoModal (player + playlist navigation)
-    contact/           ContactForm, CopyEmailButton
-    ui/                Reveal (scroll animation), SectionHeading, Emphasis, Icons
+    contact/           CopyButton
+    ui/                Reveal (scroll animation), SectionHeading, Emphasis, ThemeToggle, Icons
 ```
 
 ## Notes

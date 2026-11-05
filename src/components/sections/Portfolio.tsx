@@ -31,7 +31,7 @@ export function Portfolio() {
   const leadIsLarge = visible.length >= 3;
 
   return (
-    <section id="work" className="relative py-24 sm:py-32">
+    <section id="work" className="relative py-20 sm:py-28">
       <div className="container-x">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading

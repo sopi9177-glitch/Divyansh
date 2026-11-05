@@ -35,7 +35,7 @@ export function Testimonials() {
   const current = testimonials[active];
 
   return (
-    <section id="testimonials" className="relative border-t border-line py-24 sm:py-32">
+    <section id="testimonials" className="relative border-t border-line py-20 sm:py-28">
       <div className="container-x">
         <SectionHeading scene="06" label="Testimonials" title="Kind words from *collaborators*." />
 
